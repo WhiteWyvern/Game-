@@ -45,8 +45,8 @@ struct Tpersonagem
 	int position;											//Posição dele no mapa.
 	int deslocamento;										//O quanto ele pode se mover.
 
-	int life;												//Vida máxima do personagem.
-	int dano;												//Quanto de dano ele levou. Se ficar igual a vida ele desmaia.
+	int lifeMAX;											//Vida máxima do personagem.
+	int life;												//Vida atual do personagem.
 	int armadura;											//A armadura dele, ajuda a se defender/esquivar de ataques.
 	int iniciativa;											//Ajuda a decidir a ordem das ações em batalha.
 
@@ -61,8 +61,8 @@ struct Tpersonagem
 	void inserirPersonagem (Tpersonagem*, int, int);		//Função que "insere" o personagem no mundo(board).
 	void retornaVida       (Tpersonagem*);					//Função que diz a vida restante do personagem(life - dano);
 	void attack            (Tpersonagem*);					//Função que define o ataque básico do personagem.
-	// void dano              (Tpersonagem*);
-	int  rolaDado          ();								//Função que simula a rolagem de um dado.
+	void danoSofrido       (Tpersonagem*, int);             //Função que dá dano no personagem.
+	int  rolaDado          (int);							//Função que simula a rolagem de um dado.
 	int  checaAcerto       (Tpersonagem*, Tpersonagem*);	//Função que chega se um personagem acertou ou não outro.
 };
 

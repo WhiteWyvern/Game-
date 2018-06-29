@@ -81,11 +81,20 @@ void Tpersonagem::retornaVida (Tpersonagem* player)
 }
 
 //Simula a rolagem de um dado.
-int Tpersonagem::rolaDado ()
+int Tpersonagem::rolaDado (int typeDado)
 {
 	int dado;
-	dado = rand() % 21;
-	dado++;
-	cout << "O resultado do dado é: " << dado << endl;
-	return (dado);
+	if ((typeDado == 4)  || (typeDado == 6) || (typeDado == 8) || (typeDado == 10) ||
+		(typeDado == 12) ||  (typeDado == 20))
+	{
+		dado = rand() % typeDado;
+		dado++;
+		cout << "O resultado do dado é: " << dado << endl;
+		return (dado);
+	}
+	else
+	{
+		cout << "Tipo de dado inexistente" << endl;
+		return (0);
+	}
 }

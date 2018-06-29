@@ -5,7 +5,7 @@
 int Tpersonagem::checaAcerto(Tpersonagem* player, Tpersonagem* enemy)
 {
 	int dado, acerto;
-	dado   = player->rolaDado();
+	dado   = player->rolaDado(20);
 
 	//Falta arrumar o cauculo do acerto.
 	acerto = dado;
@@ -19,17 +19,18 @@ int Tpersonagem::checaAcerto(Tpersonagem* player, Tpersonagem* enemy)
 void Tpersonagem::attack(Tpersonagem* personagem)
 {
 	int dado, dano;
-	dado = personagem->rolaDado();
+	dado = personagem->rolaDado(20);
 
 	//Falta arrumar o cauculo do dano.
 	dano = dado;
 	cout << "seu dano foi de: " << dano << endl;
 }
 
-// void Tpersonagem::dano(Tpersonagem* personagem, int dano)
-// {
-// 	int i;
-// }
+void Tpersonagem::danoSofrido(Tpersonagem* personagem, int dano)
+{
+	int i;
+	i = 3;
+}
 
 //Função que simula uma batalha entre um jogador e um inimigo.
 //Lembrar que um jogador pode estar em batalhas com mais de 1 inimigo.
@@ -38,12 +39,11 @@ void Tboard::battle(Tpersonagem* player, Tpersonagem* enemy)
 {
 	int i;
 	char acao;
-	while ( ((player->life - player->dano) > 0) || ((enemy->life - enemy->dano) > 0))
+	while ( ((player->life > 0) || (enemy->dano) > 0))
 	{
 		//ImprimeFicha.
 		player->retornaVida(player);
 		enemy->retornaVida(enemy);
-		player->attack(player);
 		cout << "Aperte a para atacar: " << endl;
 		cin  >> acao;
 		switch (acao)

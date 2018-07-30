@@ -39,7 +39,7 @@ void Tboard::battle(Tpersonagem* player, Tpersonagem* enemy)
 {
 	int i;
 	char acao;
-	while ( ((player->life > 0) || (enemy->dano) > 0))
+	while ( ((player->life > 0) || (enemy->life) > 0))
 	{
 		//ImprimeFicha.
 		player->retornaVida(player);

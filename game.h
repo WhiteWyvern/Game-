@@ -66,18 +66,19 @@ struct Tpersonagem
 	int  checaAcerto       (Tpersonagem*, Tpersonagem*);	//Função que chega se um personagem acertou ou não outro.
 };
 
+
 //-------------------------------------------------------------------------------------------------//
 //                                             BOARD                                               //
 //-------------------------------------------------------------------------------------------------//
 
 //Struct que define o tabuleiro do jogo.
-#define n 10
 #define numEnemies 1
 struct Tboard
 {
-	int tile[n*n];											//O mapa do jogo.
 	Tpersonagem player;										//O player dentro do mapa.
+	//Provisorio.
 	Tpersonagem enemies[numEnemies];						//Todos os inimigos do mapa.
+	int tile[];		     									//O mapa do jogo.
 
 public:
 	void movimentaPersonagem (Tboard*, Tpersonagem*, char);	// 	
@@ -85,4 +86,26 @@ public:
 	void imprimeBoard        (Tboard*);						//
 	int  encounter           (Tpersonagem*, Tpersonagem*);	//
 	void battle              (Tpersonagem*, Tpersonagem*);	//
+};
+
+
+
+
+//-------------------------------------------------------------------------------------------------//
+//                                             ENEMIES                                             //
+//-------------------------------------------------------------------------------------------------//
+
+struct Tenemy
+{
+	int lifeMax;
+	int life;
+};
+
+//-------------------------------------------------------------------------------------------------//
+//                                             MASTER                                              //
+//-------------------------------------------------------------------------------------------------//
+
+struct Tmaster
+{
+	Tboard board;
 };

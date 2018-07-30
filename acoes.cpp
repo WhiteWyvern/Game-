@@ -75,9 +75,9 @@ int Tboard::encounter (Tpersonagem* player, Tpersonagem* enemy)
 void Tpersonagem::retornaVida (Tpersonagem* player)
 {
 	if (player->id == 1)
-		cout << "Sua vida é: " << (player->life - player->dano) << endl;
-	else
-		cout << "A vida do inimigo é: " << (player->life - player->dano) << endl;
+		cout << "Sua vida é: " <<  player->life << endl;
+	else 
+		cout << "A vida do inimigo é: " << player->life << endl;
 }
 
 //Simula a rolagem de um dado.
